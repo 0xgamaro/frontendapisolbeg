@@ -62,7 +62,7 @@ function AddEmployee({ employeeToEdit, onCancel, onSuccess }) {
             console.error('Validación fallida.');
             return;
         }
-        const apiUrl = 'http://localhost:5095/employee';
+        const apiUrl = 'https://apisolbeg20240317051023.azurewebsites.net/employee';
 
         const url = employeeToEdit ? `${apiUrl}/${employeeToEdit.id}` : apiUrl;
         const method = employeeToEdit ? 'PUT' : 'POST'; 
@@ -79,7 +79,6 @@ function AddEmployee({ employeeToEdit, onCancel, onSuccess }) {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            // Verifica si la respuesta tiene contenido
             return response.text().then(text => text ? JSON.parse(text) : {});
         })
         .then(data => {

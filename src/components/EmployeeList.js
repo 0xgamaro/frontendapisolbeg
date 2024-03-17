@@ -10,7 +10,7 @@ function EmployeeList() {
     const [successMessage, setSuccessMessage] = useState('');
     
     const loadEmployees = () => {
-        fetch('http://localhost:5095/employees')
+        fetch('https://apisolbeg20240317051023.azurewebsites.net/employees')
             .then(response => response.json())
             .then(data => setEmployees(data))
             .catch(error => console.error('Error:', error));
@@ -31,7 +31,7 @@ function EmployeeList() {
     const handleDeleteSelected = () => {
         const confirmDelete = window.confirm("Are you sure you want to delete the selected employees?");
         if(confirmDelete){
-            fetch('http://localhost:5095/employee', {
+            fetch('https://apisolbeg20240317051023.azurewebsites.net/employee', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,8 +40,8 @@ function EmployeeList() {
             })
             .then(() => {
                 console.log('Empleados eliminados');
-                loadEmployees(); // Recargar la lista de empleados después de eliminar
-                setSelectedEmployees([]); // Limpiar selecciones
+                loadEmployees(); 
+                setSelectedEmployees([]);
             })
             .catch(error => console.error('Error:', error));
         }
@@ -50,7 +50,7 @@ function EmployeeList() {
 
     const handleSuccess = (message) => {
         setSuccessMessage(message);
-        setTimeout(() => setSuccessMessage(''), 3000); // Limpiar el mensaje después de 3 segundos
+        setTimeout(() => setSuccessMessage(''), 5000);
     };
 
     return (
