@@ -1,0 +1,91 @@
+.employeeList {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #555; /* Más oscuro que antes */
+    border-radius: 8px;
+    background-color: #333; /* Fondo oscuro para la lista */
+    color: #ddd; /* Texto claro */
+}
+
+.employeeItem {
+    display: flex;
+    align-items: center; /* Asegura que los elementos estén alineados verticalmente */
+    gap: 10px; /* Espacio entre el checkbox y el nombre del empleado */
+    padding: 10px;
+    border-bottom: 1px solid #666; /* Ajuste para modo oscuro */
+}
+
+.employeeItem input[type="checkbox"] {
+    margin-right: 10px; /* Puedes ajustar este valor según necesites */
+}
+
+.employeeDetails {
+    flex-grow: 1;
+}
+
+.employeeItem:nth-child(odd) {
+    background-color: #2c2c2c; /* Tono oscuro para ítems impares */
+}
+
+.employeeItem:nth-child(even) {
+    background-color: #252525; /* Tono aún más oscuro para ítems pares */
+}
+
+.button {
+    margin-left: auto;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.addButton {
+    background-color: #4CAF50; /* Verde */
+    color: #fff;
+}
+
+.addButton:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para el botón de eliminar seleccionados */
+.deleteButton {
+    background-color: #f44336; /* Rojo */
+    color: #fff;
+}
+
+.deleteButton:hover {
+    background-color: #da190b;
+}
+
+/* Estilo para el botón de cargar todos los empleados */
+.loadButton {
+    background-color: #008CBA; /* Azul */
+    color: #fff;
+}
+
+.loadButton:hover {
+    background-color: #007ba7;
+}
+
+/* Estilo para botones deshabilitados */
+.button:disabled {
+    background-color: #555; /* Gris oscuro */
+    cursor: not-allowed;
+}
+
+.button.edit {
+    background-color: #007bff;
+    justify-content: right; /* Azul que contrasta bien en modo oscuro */
+}
+
+.button.delete {
+    background-color: #dc3545; /* Rojo para acciones de eliminar, buena visibilidad en oscuro */
+}
+
+/* Estilo adicional para mejorar la visibilidad de los checkboxes */
+input[type="checkbox"] {
+    accent-color: #007bff; /* Color del botón de checkbox para mejorar contraste */
+}
