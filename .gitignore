@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-
+/.github/workflows
 # production
 /build
 
