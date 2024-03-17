@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './AddEmployee.css';
 
-function AddEmployee({ employeeToEdit, onCancel, onSuccess }) {
+function AddEmployee({ employeeToEdit, onCancel, onSuccess, isEditing }) {
     const [employee, setEmployee] = useState({
         firstName: '',
         lastName: '',
         age: '',
         sex: '',
     });
+
+    const formClass = isEditing ? "form-right" : "form-left";
 
     const handleCancel = () => {
         setEmployee({
@@ -97,7 +99,7 @@ function AddEmployee({ employeeToEdit, onCancel, onSuccess }) {
     };
 
     return (
-        <form className="form" onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <form className={`form ${formClass}`} onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <div>
             {errors.firstName && <div style={{ color: "red" }}>{errors.firstName}</div>}
                 <input

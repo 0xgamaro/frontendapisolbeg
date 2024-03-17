@@ -56,7 +56,8 @@ function EmployeeList() {
     return (
         <div className="employeeList">
             <h2>Lista de Empleados</h2>
-            <button className="button addbutton" onClick={() => setShowAddEmployeeForm(true)}>Add New Employee</button>
+            <button className="button addbutton" onClick={() => {setEditingEmployeeId(null) 
+                setShowAddEmployeeForm(true)}}>Add New Employee</button>
             <button className="button deleteButton" onClick={handleDeleteSelected} disabled={selectedEmployees.length === 0}>Delete selected Employees</button>
             <button className="button loadButton" onClick={loadEmployees}>Load employee list</button>
 
@@ -64,7 +65,7 @@ function EmployeeList() {
                 <div className="successMessage">{successMessage}</div>
             )}
 
-            {showAddEmployeeForm && !editingEmployeeId && (
+            {showAddEmployeeForm && !editingEmployeeId && (                
                         <AddEmployee 
                             onCancel={() => setShowAddEmployeeForm(false)}
                             onSuccess={handleSuccess}
@@ -99,6 +100,7 @@ function EmployeeList() {
                                         setShowAddEmployeeForm(false);
                                     }}
                                     onSuccess={handleSuccess}
+                                    isEditing={!!editingEmployeeId}
                                 />
                             )}
                         </div>

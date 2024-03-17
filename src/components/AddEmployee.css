@@ -1,4 +1,8 @@
-.form{
-    margin-left: auto;
-    justify-content: right;
+.form-left {
+    margin-right: auto;
 }
+
+.form-right {
+    margin-left: auto;
+}
+
