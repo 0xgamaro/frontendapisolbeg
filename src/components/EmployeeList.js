@@ -55,7 +55,7 @@ function EmployeeList() {
 
     return (
         <div className="employeeList">
-            <h2>Lista de Empleados</h2>
+            <h2>List of employees</h2>
             <button className="button addbutton" onClick={() => {setEditingEmployeeId(null) 
                 setShowAddEmployeeForm(true)}}>Add New Employee</button>
             <button className="button deleteButton" onClick={handleDeleteSelected} disabled={selectedEmployees.length === 0}>Delete selected Employees</button>
